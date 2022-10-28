@@ -1,0 +1,4 @@
+data/origin/*
+data/total_train_data_*
+data/vis_chromophore_pretrain_*
+trained_model/*

@@ -64,7 +64,7 @@ def make_data(filename, target):
     test_y = []
     count = 0
 
-    test_x = multiprocessing(make_results,lines, 16)
+    test_x = multiprocessing(make_results,lines, 8)
 
     smiles_list = []
     for i in range(len(test_x)):
@@ -95,9 +95,7 @@ def make_npz_file(fn, output):
 if __name__ == '__main__':
     import glob
     import sys
-    #filenames = ['total_train_data.txt']
-    #filenames = ['vis_chromophore_pretrain.txt']
-    filenames = ['TADF-2022.txt']
-    filenames = filenames
+    filenames = ['total_train_data.txt']
+    #filenames = ['total_train_data.txt','random_2_log5.txt']
     for i in range(len(filenames)):
         make_npz_file(filenames[i],f'origin/{filenames[i].split(".")[0]}.npz')

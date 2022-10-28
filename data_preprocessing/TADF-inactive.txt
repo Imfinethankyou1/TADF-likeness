@@ -1,0 +1,9 @@
+c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-n4c5ccccc5c5ccccc54)cc3)n2)cc1
+CC1(C)c2ccccc2N(c2ccccc2)c2ccc(-c3ccc(S(=O)(=O)c4ccc(-c5ccc6c(c5)C(C)(C)c5ccccc5N6c5ccccc5)cc4)cc3)cc21
+CC1(C)c2ccccc2-n2c(-c3ccc(-n4c5ccccc5c5ccccc54)cc3)nc3cccc1c32
+C(=C/c1ccc(-n2c3ccccc3c3ccccc32)cc1)\c1ccc(-c2ccc(/C=C/c3ccc(-n4c5ccccc5c5ccccc54)cc3)cc2)cc1
+CC1(C)c2ccccc2-n2c(-c3ccc(-n4c5ccc(-n6c7ccccc7c7ccccc76)cc5c5cc(-n6c7ccccc7c7ccccc76)ccc54)cc3)nc3cccc1c32
+CC1(C)c2ccccc2N(c2ccccc2)c2ccc(S(=O)(=O)c3ccc4c(c3)C(C)(C)c3ccccc3N4c3ccccc3)cc21
+c1ccc2c(c1)c1ccccc1n2-c1ccc2cc(-c3ccc(-c4ccc(-c5cc6ccc(-n7c8ccccc8c8ccccc87)cc6o5)cc4)cc3)oc2c1
+CC1(C)c2ccccc2N(c2ccccc2)c2ccc(-c3ccc(-c4ccc5c(c4)C(C)(C)c4ccccc4N5c4ccccc4)c4nsnc34)cc21
+c1ccc2c(c1)c1ccccc1n2-c1ccc(-c2cc3ccc(-c4ccc5cc(-c6ccc(-n7c8ccccc8c8ccccc87)cc6)oc5c4)cc3o2)cc1

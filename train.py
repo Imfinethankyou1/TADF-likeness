@@ -134,6 +134,7 @@ if args.train:
         print('num_descriptor : ',len(X_train[0]))
         dataset = train_dataset
         save_model = args.save_model
+        #save_model = None
         autoencoder = AutoEncoder(len(X_train[0]))
         trainer = AETrainer(autoencoder,
                             [dataset[0], val_dataset],
@@ -209,21 +210,6 @@ for model_ind in range(1):
                 unlab_list[j]+=unlab
             j+=1
 
-extract_z = True
-if extract_z:
-    i = 0
-    for unlabel_xs in unlabel_xs_list:
-        X = torch.FloatTensor(unlabel_xs).to(device)
-        z_list = trainer.ae_net.encoder(X)
-        data = {'feats':[]}
-        for batch in z_list:
-            a = batch.tolist()
-            data['feats'].append(a)
-        name = test_fns[i].split('/')[-1].split('.txt')[0]
-        print(name, 'min val : ', np.min(unlab_list[i]))
-        with open(f'data/z/{name}.npz','wb') as f:
-            pickle.dump(data,f)
-        i+=1
 
 lab = lab_list[0]
 unlab_list = [unlab for unlab in unlab_list]

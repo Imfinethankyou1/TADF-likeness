@@ -68,22 +68,6 @@ def make_results_fp(line):
         return ''
     return fp
 
-def rm_duple_from_train(filename, ref_smiles_list):
-    with open(f'../data_220615/{filename}') as f:
-        lines = f.readlines()
-
-    new_lines = []
-    for line in lines:
-        smiles = Chem.MolToSmiles(Chem.MolFromSmiles(line.split()[1]))
-        if not smiles in ref_smiles_list:
-            new_lines.append(line)
-    with open(filename,'w') as f:
-        for line in new_lines:
-            f.write(line)
-    print(filename, len(lines), len(new_lines))    
-
-
-
 
 def make_data(filename, target,input_type):
     if isinstance(filename,str):
@@ -131,44 +115,6 @@ def make_npz_file(fn, output, input_type):
     with open(output,'wb') as f:
         pickle.dump(data,f)
 
-def make_data_oled(filename, output_file):
-    with open(filename) as f:
-        lines = f.readlines()
-    #lines = random.sample(lines, 10000)
-    test_x = []
-    test_y = []
-    count = 0
-    new_lines = []
-    for line in lines:
-        TADF = False
-        elements = line.strip().split(',')
-        if 2.0 <= float(elements[4]) < 3.0:
-            if float(elements[4]) - float(elements[5]) < 0.2:
-                TADF = True # Pubchem
-                count +=1
-        #Pub = False
-        if TADF:
-            new_line = f'{int(elements[0])+500} {elements[1]} 1\n'
-            new_lines.append(new_line)
-    with open(output_file, 'w') as f:         
-        for line in new_lines:
-            f.write(line)
-
-def sum_TADF_data(fname1, fname2):
-    with open(fname1) as f:
-        lines = f.readlines()
-    with open(fname2) as f:
-        lines += f.readlines()
-    smiles_list = []
-    for line in lines:
-        smiles = line.split()[1]
-        smiles_list.append(smiles)
-    smiles_list = list(set(smiles_list))
-    i = 0
-    with open('total_TADF.txt','w') as f:
-        for smiles in smiles_list:
-            f.write(f'{i} {smiles} 1\n')
-            i+=1
 
 def make_k_fold(fn,k, output):
     with open(fn) as f:
@@ -198,8 +144,7 @@ def make_k_fold(fn,k, output):
 if __name__ == '__main__':
     import glob
     import sys
-    if True:
-        fn = 'vis_chromophore_pretrain.txt'
-        make_k_fold(fn, 5, 'vis_chromophore_pretrain')
-        #fn = 'total_train_data.txt'
-        #make_k_fold(fn, 5, 'total_train_data')
+    fn = 'vis_chromophore_pretrain.txt'
+    make_k_fold(fn, 5, 'vis_chromophore_pretrain')
+    fn = 'total_train_data.txt'
+    make_k_fold(fn, 5, 'total_train_data')
