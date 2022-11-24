@@ -1,0 +1,10 @@
+dict(SCF='XQC',
+     basis='6-31g(d) 6D 10F nosymm GFInput',
+     charge=0,
+     chk='calculation/no_transfer_pubchem_sampling_1_b3lyp/115743840_rwf.chk',
+     initial_magmoms=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+     mem='3GB',
+     method='b3lyp',
+     nprocshared=14,
+     rwf='calculation/no_transfer_pubchem_sampling_1_b3lyp/115743840_rwf.rwf',
+     td='(50-50,nstate=2)')

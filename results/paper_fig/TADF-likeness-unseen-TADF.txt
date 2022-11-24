@@ -1,0 +1,141 @@
+39 c1ccc(-c2nc(-c3ccccc3)nc(-c3cc(-n4c5ccccc5c5ccccc54)cc(-n4c5ccccc5c5ccccc54)c3)n2)cc1 98.73531341552734
+348 Cc1ccccc1-c1nc(-c2ccccc2C)nc(-c2ccc(N3c4ccccc4C4(c5ccccc5-c5ccccc54)c4ccccc43)cc2C)n1 98.22048950195312
+21 c1ccc(-c2nc(-c3ccc(-n4c5ccccc5c5cc(-c6ccc7c(c6)c6ccccc6n7-c6ccccc6)ccc54)cc3)nc(-c3ccc(-n4c5ccccc5c5cc(-c6ccc7c(c6)c6ccccc6n7-c6ccccc6)ccc54)cc3)n2)cc1 97.86190032958984
+245 N#Cc1cc(C#N)c(-n2c3ccccc3c3ccccc32)cc1-n1c2ccccc2c2ccccc21 97.57575225830078
+8 N#Cc1cc(-c2cc(C#N)c(-n3c4ccccc4c4ccccc43)cc2-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)cc1-n1c2ccccc2c2ccccc21 97.5557861328125
+148 CC1(C)c2ccccc2N(c2ccc(-c3nc(-c4ccccc4)nc(-c4ccccc4)n3)cc2)c2ccccc21 97.4836196899414
+48 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-n4c5ccccc5c5cc(-c6cccc7c6c6ccccc6n7-c6ccc(-c7nc(-c8ccccc8)nc(-c8ccccc8)n7)cc6)ccc54)cc3)n2)cc1 97.4564208984375
+99 N#Cc1cc(-n2c3ccccc3c3ccccc32)c(C#N)cc1-n1c2ccccc2c2ccccc21 97.35704040527344
+267 CC1(C)c2cc(-n3c4ccccc4c4ccccc43)ccc2N(c2ccc(-c3cc(-c4ccccc4)nc(-c4ccccc4)n3)cc2)c2ccc(-n3c4ccccc4c4ccccc43)cc21 97.34861755371094
+163 CC(C)(C)c1ccc2c(c1)B1c3cc(C(C)(C)C)ccc3Oc3cc(N4c5ccccc5C(C)(C)c5ccccc54)cc(c31)O2 97.25225067138672
+227 N#Cc1c(C#N)c(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)c1-n1c2ccccc2c2ccccc21 97.13613891601562
+TDBA-DPAC CC(C)(C)C1=CC=C2OC3=CC(=CC4=C3B(C2=C1)C1=CC(=CC=C1O4)C(C)(C)C)N1C2=C(C=CC=C2)C(C2=CC=CC=C2)(C2=CC=CC=C2)C2=C1C=CC=C2 #https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202200537 96.77548217773438
+237 N#Cc1cc(-c2ccc(N3c4ccccc4Oc4ccccc43)cc2)c(-c2ccc(N3c4ccccc4Oc4ccccc43)cc2)cc1C#N 96.73521423339844
+244 CC1(C)c2ccccc2N(c2ccc(-c3nc4ccc(N5c6ccccc6C(C)(C)c6ccccc65)cc4nc3-c3ccc(N4c5ccccc5C(C)(C)c5ccccc54)cc3)cc2)c2ccccc21 96.69237518310547
+357 CC1(C)c2ccccc2-c2cc3c4ccccc4n(-c4ccc(-c5nc(-c6ccccc6)nc(-c6ccccc6)n5)cc4)c3cc21 96.6732406616211
+145 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-n4c5ccc(N(c6ccccc6)c6ccccc6)cc5c5cc(N(c6ccccc6)c6ccccc6)ccc54)cc3)n2)cc1 96.44374084472656
+23 N#Cc1c(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)cc(-n2c3ccccc3c3ccccc32)c1-n1c2ccccc2c2ccccc21 96.30506896972656
+15 O=C(c1ccncc1)c1cc(-n2c3ccccc3c3ccccc32)cc(-n2c3ccccc3c3ccccc32)c1 96.21155548095703
+AT-spiro-DMACF CC1(C)C2=CC=CC=C2N(C2=CC3=C(C=C2)C2=CC=C(C=C2C32C3=CC=CC=C3C(=O)C3=C2C=CC=C3)N2C3=CC=CC=C3C(C)(C)C3=C2C=CC=C3)C2=C1C=CC=C2 # https://pubs.rsc.org/en/content/articlehtml/2022/tc/d1tc05225j 96.10629272460938
+213 Cc1ccc2c(c1)c1cc(C)ccc1n2-c1cc(-c2nc(-c3ccccc3)nc(-c3ccccc3)n2)cc(-n2c3ccc(C)cc3c3cc(C)ccc32)c1-n1c2ccc(C)cc2c2cc(C)ccc21 96.05049133300781
+DMTO-DMAC CC1(C)C2=CC=CC=C2N(C2=CC=C3C(=O)C4=C(C=CC=C4)C4(C5=CC=CC=C5C5=C4C=CC=C5)C3=C2)C2=C1C=CC=C2 # https://iopscience.iop.org/article/10.35848/1882-0786/ac77d5/pdf 95.90597534179688
+394 Cc1cc(-n2c3ccccc3c3cc4c(cc32)C2c3ccccc3C4c3ccccc32)c(C)cc1-c1nc(-c2ccccc2)nc(-c2ccccc2)n1 95.72906494140625
+423 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-n4c5ccccc5c5cc6c(cc54)C4c5ccccc5C6c5ccccc54)cc3)n2)cc1 95.7012939453125
+157 N#Cc1c(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3ccccc32)c1-n1c2ccccc2c2ccccc21 95.48794555664062
+365 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1cccc(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c1C#N 95.4605712890625
+351 Cc1cc(C)c(B(c2c(C)cc(C)cc2C)c2c(C)cc(N3c4ccccc4Oc4ccccc43)cc2C)c(C)c1 95.37669372558594
+221 O=C(c1ccc(N2c3ccccc3Oc3ccccc32)cc1)c1ccc(N2c3ccccc3Oc3ccccc32)cc1 95.20060729980469
+2DMAC-DBP-2tBuCz CC(C)(C)C1=CC2=C(C=C1)N(c1ccc(cc21)C(C)(C)C)c1cc2nc3c4ccc(cc4c4cc(ccc4c3nc2cc1N1C2=C(C=C(C=C2)C(C)(C)C)c2cc(ccc12)C(C)(C)C)N1C2=CC=CC=C2C(C)(C)C2=C1C=CC=C2)N1C2=CC=CC=C2C(C)(C)C2=C1C=CC=C2 # https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202102774 95.18746185302734
+322 CC1(C)c2ccccc2N(c2ccc(-c3cccc(C#N)c3)cc2)c2ccccc21 95.181640625
+3CzCCN CC1=CC=C(C=C1)N1C2=C(C=C(C)C=C2)c2c1c(N1C3=C(C=CC=C3)c3ccccc13)c(C#N)c(N1C3=C(C=CC=C3)c3ccccc13)c2N1C2=C(C=CC=C2)c2ccccc12 # https://pubs.rsc.org/en/content/articlehtml/2022/sc/d2sc02478k 95.13056182861328
+DPS-SAIA O=S(=O)(C1=CC=C(C=C1)N1C2=CC=CC=C2C2(C3=C4N(C5=CC=CC=C5C4=CC=C3)C3=CC=CC=C23)C2=C1C=CC=C2)C1=CC=C(C=C1)N1C2=CC=CC=C2C2(C3=C4N(C5=CC=CC=C5C4=CC=C3)C3=CC=CC=C23)C2=C1C=CC=C2 # https://pubs.rsc.org/en/content/articlehtml/2022/tc/d1tc04939a 95.12882995605469
+399 O=P1(c2ccccc2)c2ccc(N3c4ccccc4Oc4ccccc43)cc2-c2cc(N3c4ccccc4Oc4ccccc43)ccc21 94.98892211914062
+404 CC(C)c1cc(C(C)C)c(B2c3ccccc3Oc3cc(-n4c5ccccc5c5ccc6c(c7ccccc7n6-c6ccccc6)c54)ccc32)c(C(C)C)c1 94.9569091796875
+159 O=S(=O)(c1ccc(N2c3ccccc3N(c3ccccc3)c3ccccc32)cc1)c1ccc(N2c3ccccc3N(c3ccccc3)c3ccccc32)cc1 94.90567016601562
+295 CC1(C)c2ccccc2N(c2ccc3c(c2)c2cc(N4c5ccccc5C(C)(C)c5ccccc54)ccc2c2nc(C#N)c(C#N)nc32)c2ccccc21 94.85450744628906
+256 Cc1ccc2c(c1)C1(c3ccccc3Oc3ccccc31)c1cc(C)ccc1N2c1ccc(-c2nc(-c3ccccc3)cc(-c3ccccc3)n2)cc1 94.81602478027344
+335 CC(C)c1cc(C(C)C)c(B2c3ccccc3Oc3cc(-n4c5ccccc5c5c6c(c7ccccc7n6-c6ccccc6)c6c(c7ccccc7n6-c6ccccc6)c54)ccc32)c(C(C)C)c1 94.8075942993164
+289 CC1(C)c2ccccc2N(c2ccc(-c3ccc(C#N)c(C#N)n3)cc2)c2ccccc21 94.7384033203125
+307 N#Cc1nc(-c2ccc(N3c4ccccc4Oc4ccccc43)cc2)c(-c2ccc(N3c4ccccc4Oc4ccccc43)cc2)nc1C#N 94.69587707519531
+420 CC1(C)c2ccccc2N(c2ccc3c(c2)c2ccccc2c2nc4ccccc4nc32)c2ccccc21 94.67285919189453
+436 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1cc(C(=O)c2ccncc2)cc(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c1 94.40470886230469
+169 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1cc(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c(-c2ccc(C#N)cc2)c1-n1c2ccc(C(C)(C)C)cc2c2cc(C(C)(C)C)ccc21 94.35846710205078
+76 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1cc(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c(C#N)c1-n1c2ccc(C(C)(C)C)cc2c2cc(C(C)(C)C)ccc21 94.32390594482422
+67 N#Cc1ccc2c(c1)C1(c3cc(C#N)ccc3-2)c2cc(N(c3ccccc3)c3ccccc3)ccc2-c2ccc(N(c3ccccc3)c3ccccc3)cc21 94.32162475585938
+262 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-c4ccc5c(c4)C4(c6ccccc6-c6ccccc64)c4cc(-c6ccc(-c7nc(-c8ccccc8)nc(-c8ccccc8)n7)cc6)ccc4N5c4ccccc4)cc3)n2)cc1 94.30467224121094
+190 c1ccc(-c2nc(-c3ccccc3)nc(-n3c4ccccc4c4cc(-c5ccc6c(c5)c5ccccc5n6-c5ccccc5)ccc43)n2)cc1 94.24659729003906
+CzPh3AQ CC1=CC=C2C(=O)C3=C(C=CC(=C3)C3=CC(=CC=C3)N3C4=C(C=CC=C4)c4ccccc34)C(=O)C2=C1 # https://www.sciencedirect.com/science/article/pii/S1385894722017156 93.93502044677734
+363 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1cc(C(=O)c2ccccn2)cc(-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c1 93.84925079345703
+CzPh2AQ CC1=CC=C2C(=O)C3=C(C=CC(=C3)C3=CC=CC=C3N3C4=C(C=CC=C4)c4ccccc34)C(=O)C2=C1 # https://www.sciencedirect.com/science/article/pii/S1385894722017156 93.8297119140625
+442 c1ccc(-c2nc(-c3ccccc3)nc(-n3c4ccccc4c4cc(-n5c6ccccc6c6ccccc65)cc(-n5c6ccccc6c6ccccc65)c43)n2)cc1 93.80284881591797
+18 c1ccc2c(c1)Oc1ccc(-c3ccc(N4c5ccccc5Oc5ccccc54)cc3)c3c1B2c1ccccc1O3 93.75739288330078
+17 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1ccc2c(ccc3nc4ccc5cc(-n6c7ccc(C(C)(C)C)cc7c7cc(C(C)(C)C)ccc76)ccc5c4nc32)c1 93.73118591308594
+3MeCzCCN CC1=CC=C(C=C1)N1C2=C(C=C(C)C=C2)c2c1c(N1C3=C(C=C(C)C=C3)c3cc(C)ccc13)c(C#N)c(N1C3=C(C=C(C)C=C3)c3cc(C)ccc13)c2N1C2=C(C=C(C)C=C2)c2cc(C)ccc12 # https://pubs.rsc.org/en/content/articlehtml/2022/sc/d2sc02478k 93.7236328125
+CzPh4AQ CC1=CC=C2C(=O)C3=C(C=CC(=C3)C3=CC=C(C=C3)N3C4=C(C=CC=C4)c4ccccc34)C(=O)C2=C1 # https://www.sciencedirect.com/science/article/pii/S1385894722017156 93.72201538085938
+323 CC(C)c1cc(C(C)C)c(B2c3cc(N4c5ccccc5Oc5ccccc54)ccc3N(c3ccccc3)c3ccc(N4c5ccccc5Oc5ccccc54)cc32)c(C(C)C)c1 93.6287841796875
+246 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(N4c5ccccc5[Si](c5ccccc5)(c5ccccc5)c5ccccc54)cc3)n2)cc1 93.48043060302734
+400 O=S1(=O)c2ccccc2Oc2cc(N3c4ccccc4C4(c5ccccc53)c3ccccc3N(c3ccc5c(c3)Oc3ccccc3S5(=O)=O)c3ccccc34)ccc21 93.45560455322266
+257 CC1(C)c2ccccc2N(c2ccc(-c3ccc(C#N)nc3)cc2)c2ccccc21 93.2512435913086
+PXZANQ O=C1C2=CC=CC=C2C2(C3=CC=CC=C3N3C4=CC=CC=C4OC4=CC=CC2=C34)C2=C1C=CC=C2 # https://www.sciencedirect.com/science/article/pii/S0143720821007397 93.14643859863281
+KCTBC CC1=CC(C2=CC=C(C=C2)N2C3=C(C=C(C=C3)C(C)(C)C)c3cc(ccc23)C(C)(C)C)=C(C#N)C(C)=C1C(=O)C1=CC=C(C=C1)N1C2=C(C=C(C=C2)C(C)(C)C)c2cc(ccc12)C(C)(C)C # https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202200376 93.0792465209961
+224 O=C1c2cc(-c3ccc4c(c3)c3ccccc3n4-c3ccccc3)ccc2S(=O)(=O)c2ccc(-c3ccc4c(c3)c3ccccc3n4-c3ccccc3)cc21 93.02591705322266
+dCz-Xo-TRZ O1C2=CC=CC=C2C2(C3=C4N(C5=CC=C(C=C5C4=CC=C3)C3=CC4=C(C=C3)N(c3ccccc43)C3=CC=CC=C3)C3=CC=CC=C23)C2=C1C=CC=C2C1=CC=C(C=C1)C1=NC(=NC(=N1)C1=CC=CC=C1)C1=CC=CC=C1 # https://onlinelibrary.wiley.com/doi/full/10.1002/ange.202200059 92.86944580078125
+36 c1ccc(-c2nnc(-c3ccc(N4c5ccccc5N(c5ccccc5)c5ccccc54)cc3)n2-c2ccccc2)cc1 92.74665832519531
+2SPAC-DBP-2tBuCz CC(C)(C)C1=CC2=C(C=C1)N(c1ccc(cc21)C(C)(C)C)c1cc2nc3c4ccc(cc4c4cc(ccc4c3nc2cc1N1C2=C(C=C(C=C2)C(C)(C)C)c2cc(ccc12)C(C)(C)C)N1C2=CC=CC=C2C2(C3=C(C=CC=C3)c3ccccc23)C2=C1C=CC=C2)N1C2=CC=CC=C2C2(C3=C(C=CC=C3)c3ccccc23)C2=C1C=CC=C2 # https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202102774 92.72626495361328
+266 Cc1ccc2c(c1)c1cc(C)ccc1n2-c1c(C#N)c(-n2c3ccc(C)cc3c3cc(C)ccc32)c(-n2c3ccc(C)cc3c3cc(C)ccc32)c(C#N)c1-n1c2ccc(C)cc2c2cc(C)ccc21 92.680908203125
+KCCz CC1=CC(C2=CC=C(C=C2)N2C3=C(C=CC=C3)c3ccccc23)=C(C#N)C(C)=C1C(=O)C1=CC=C(C=C1)N1C2=C(C=CC=C2)c2ccccc12 # https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202200376 92.53062438964844
+168 N#Cc1c(-n2c3ccc(-c4ccccc4)cc3c3cc(-c4ccccc4)ccc32)c(-n2c3ccccc3c3ccccc32)c(-n2c3ccc(-c4ccccc4)cc3c3cc(-c4ccccc4)ccc32)c(-n2c3ccccc3c3ccccc32)c1-n1c2ccc(-c3ccccc3)cc2c2cc(-c3ccccc3)ccc21 92.49369049072266
+196 CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1ccc(-c2nc(-c3ccc(P(=O)(c4ccccc4)c4ccccc4)cc3)nc(-c3ccc(P(=O)(c4ccccc4)c4ccccc4)cc3)n2)cc1 92.39863586425781
+450 N#Cc1nc2c3ccc(-n4c5ccccc5c5ccccc54)cc3c3cc(-n4c5ccccc5c5ccccc54)ccc3c2nc1C#N 92.39176177978516
+443 Cc1cc(C)c(B(c2c(C)cc(C)cc2C)c2c(C)cc(-n3c4ccccc4c4cc(N(c5ccccc5)c5ccccc5)ccc43)cc2C)c(C)c1 92.35316467285156
+TDBA-PAS CC(C)(C)C1=CC=C2OC3=CC(=CC4=C3B(C2=C1)C1=CC(=CC=C1O4)C(C)(C)C)N1C2=C(C=CC=C2)[Si](C2=CC=CC=C2)(C2=CC=CC=C2)C2=C1C=CC=C2 #https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202200537 92.35140228271484
+61 CC(C)(C)c1ccc(N2c3ccc(C(C)(C)C)cc3B3c4cc(C(C)(C)C)ccc4N(c4ccc(C(C)(C)C)cc4)c4cc(-n5c6ccc(C(C)(C)C)cc6c6cc(C(C)(C)C)ccc65)cc2c43)cc1 92.17379760742188
+CBZANQ O=C1C2=CC=CC=C2C2(C3=C4N(C5=CC=CC=C5C4=CC=C3)C3=CC=CC=C23)C2=C1C=CC=C2 # https://www.sciencedirect.com/science/article/pii/S0143720821007397 92.01634979248047
+325 c1ccc(-c2nc(-c3ccccc3)nc(-c3cc(-n4c5ccccc5c5ncccc54)c(-n4c5ccccc5c5ncccc54)c(-n4c5ccccc5c5ncccc54)c3)n2)cc1 92.00477600097656
+445 c1ccc(N(c2ccccc2)c2ccc(-c3ccc4c(c3)C3(c5cc(-c6ccc(N(c7ccccc7)c7ccccc7)cc6)ccc5O4)c4ccccc4-c4ccccc43)cc2)cc1 91.87496948242188
+mCz-Xo-TRZ CC1=CC=C2N3C4=C(C=C(C)C=C4C2=C1)C1(C2=CC=CC=C2OC2=C1C(=CC=C2)C1=CC=C(C=C1)C1=NC(=NC(=N1)C1=CC=CC=C1)C1=CC=CC=C1)C1=CC=CC=C31 # https://onlinelibrary.wiley.com/doi/full/10.1002/ange.202200059 91.85610961914062
+236 c1ccc(N(c2ccccc2)c2ccc3c(c2)c2ccccc2n3-c2ccc3c(c2)c2cc(-n4c5ccccc5c5cc(N(c6ccccc6)c6ccccc6)ccc54)ccc2c2nccnc32)cc1 91.68275451660156
+254 N#Cc1cc(-n2c3ccccc3c3ccccc32)c(-n2c3ccccc3c3cc(Br)ccc32)cc1C#N 91.66473388671875
+406 CC(C)c1cc(C(C)C)c(B2c3cc(-n4c5ccccc5c5ccccc54)ccc3N(c3ccccc3)c3ccc(-n4c5ccccc5c5ccccc54)cc32)c(C(C)C)c1 91.65504455566406
+106 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-n4c5ccccc5c5c6oc7ccccc7c6ccc54)cc3)n2)cc1 91.57013702392578
+PTZBN3 O=S1(=O)C2=C(C=CC=C2)N2c3cc(cc4N(c5ccccc5)c5ccccc5B(c5cccc1c25)c34)N(C1=CC=CC=C1)C1=CC=CC=C1 # https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.202201032 91.1807861328125
+Me-DPS-SAIA CC1=CC(=CC=C1N1C2=CC=CC=C2C2(C3=C4N(C5=CC=CC=C5C4=CC=C3)C3=CC=CC=C23)C2=C1C=CC=C2)S(=O)(=O)C1=CC=C(N2C3=CC=CC=C3C3(C4=C5N(C6=CC=CC=C6C5=CC=C4)C4=CC=CC=C34)C3=C2C=CC=C3)C(C)=C1 # https://pubs.rsc.org/en/content/articlehtml/2022/tc/d1tc04939a 90.88162994384766
+PTZBN2 S1C2=C(C=CC=C2)N2c3cc(cc4N(c5ccccc5)c5ccccc5B(c5cccc1c25)c34)N(C1=CC=CC=C1)C1=CC=CC=C1 # https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.202201032 90.86104583740234
+DPTZ-QX CC(C)(C)C1=CC2=C(C=C1)N(c1c2cc(cc1C1=CC2=C(C=C1)C1=NC3=CC=CC=C3N=C1C1=C2C=CC=C1)C(C)(C)C)C1=CC2=C3N(C4=CC=CC=C4SC3=C1)C1=CC=CC=C1S2 https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/chem.202202305 90.83666229248047
+165 Cc1ccc(B(c2ccc(C)cc2C)c2ccccc2-n2c3ccc(C(C)(C)C)cc3c3cc(C(C)(C)C)ccc32)c(C)c1 90.63251495361328
+85 O=S(=O)(c1ccc(N(c2ccccc2)c2ccccc2)cc1)c1ccc(N(c2ccccc2)c2ccccc2)cc1 90.55770111083984
+280 c1ccc(-c2nnc(-c3cc(-c4nnc(-c5ccccc5)o4)c(-n4c5ccccc5c5ccccc54)cc3-n3c4ccccc4c4ccccc43)o2)cc1 90.55436706542969
+207 c1ccc(-c2nc(-c3ccccc3)nc(-c3ccc(-n4c5ccc(-c6ccc7oc8ccccc8c7c6)cc5c5cc(-c6ccc7oc8ccccc8c7c6)ccc54)cc3)n2)cc1 90.53787231445312
+3PhCzCCN CC1=CC=C(C=C1)N1C2=C(C=C(C)C=C2)c2c1c(N1C3=C(C=C(C=C3)C3=CC=CC=C3)c3cc(ccc13)C1=CC=CC=C1)c(C#N)c(N1C3=C(C=C(C=C3)C3=CC=CC=C3)c3cc(ccc13)C1=CC=CC=C1)c2N1C2=C(C=C(C=C2)C2=CC=CC=C2)c2cc(ccc12)C1=CC=CC=C1 # https://pubs.rsc.org/en/content/articlehtml/2022/sc/d2sc02478k 90.53089141845703
+253 c1ccc(-c2cc(-c3nnc(-c4ccc(N5c6ccccc6Oc6ccccc65)cc4)o3)c(-c3ccccc3)c(-c3ccccc3)c2-c2ccccc2)cc1 90.45621490478516
+PTZBN1 S1C2=C(C=CC=C2)N2c3cccc4N(c5ccccc5)c5ccccc5B(c5cccc1c25)c34 # https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.202201032 90.43439483642578
+68 CC(C)(C)c1ccc(N2c3cc4cc5c(cc4cc3B3c4ccccc4N(c4ccccc4)c4cc(N(c6ccccc6)c6ccccc6)cc2c43)B2c3ccccc3N(c3ccccc3)c3cc(N(c4ccccc4)c4ccccc4)cc(c32)N5c2ccc(C(C)(C)C)cc2)cc1 90.31997680664062
+10b C1=CC2=CC3=C(C=C2C=C1)N=C1C(=N3)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 90.27505493164062
+125 c1ccc(-n2c(-c3ccc(-c4ccc(-c5cn6ccccc6n5)cc4)cc3)nc3c4ccccc4c4ccccc4c32)cc1 90.16874694824219
+156 Cc1ccc(N(c2ccc(C)cc2)c2c3ccccc3c(N(c3ccc(C)cc3)c3ccc(C)cc3)c3ccccc23)cc1 89.4438705444336
+DPAC-MPC CC1=NC(C)=C(C#N)C(C2=CC=C(C=C2)N2C3=CC=CC=C3C(C3=CC=CC=C3)(C3=CC=CC=C3)C3=C2C=CC=C3)=C1C#N # https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.202112881 89.3686752319336
+10a c1cc2-c3cccc-4c3N3c2c(c1)-c1cccc(c31)-c1nc2ccccc2nc-41 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 89.11306762695312
+3CPDA-MPC CC1=NC(C)=C(C#N)C(C2=CC=C(C=C2)N2C3=CC=CC=C3C(C3=C2C=CC=C3)(c2ccc3N(C4=C(C=CC=C4)c3c2)C2=CC=CC=C2)c2ccc3N(C4=C(C=CC=C4)c3c2)C2=CC=CC=C2)=C1C#N # https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.202112881 89.06031799316406
+9CPDA-MPC CC1=NC(C)=C(C#N)C(C2=CC=C(C=C2)N2C3=CC=CC=C3C(C3=CC=C(C=C3)N3C4=C(C=CC=C4)c4ccccc34)(C3=CC=C(C=C3)N3C4=C(C=CC=C4)c4ccccc34)C3=C2C=CC=C3)=C1C#N # https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.202112881 88.78631591796875
+SFO-SPAC CC1=C2C3=C(C=CC=C3)C3(C2=C(F)C=C1)C1=CC(=CC=C1C(=O)C1=C3C=CC=C1)N1C2=CC=CC=C2C2(C3=CC=CC=C3C3=C2C=CC=C3)C2=C1C=CC=C2 # https://www.sciencedirect.com/science/article/pii/S1385894722007392 88.60037231445312
+149 Cc1cc(C)c2c(c1)c1cc(C)cc(C)c1n2-c1ccc2c(=O)c3ccccc3oc2c1 88.53126525878906
+SFO-DMAC CC1=C2C3=C(C=CC=C3)C3(C2=C(F)C=C1)C1=CC(=CC=C1C(=O)C1=C3C=CC=C1)N1C2=CC=CC=C2C(C)(C)C2=C1C=CC=C2 # https://www.sciencedirect.com/science/article/pii/S1385894722007392 88.36730194091797
+387 O=c1c2ccccc2n2c3ccccc3c(=O)c3cc(-c4ccccc4)cc1c32 88.29487609863281
+10l CC1=CC2=C(C=C1C)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 88.22795104980469
+71 O=c1c2cc(-n3c4ccccc4c4ccccc43)ccc2sc2ccc(-n3c4ccccc4c4ccccc43)cc12 88.12884521484375
+m-v-DABNA CC1=CC(=CC=C1)N(C1=CC(C)=CC=C1)c1cc2N(c3ccccc3)c3cc4N(c5ccccc5)c5cc(cc6N(c7cccc(C)c7)c7cc(C)ccc7B(c4cc3B3c4ccc(C)cc4N(c4cccc(C)c4)c(c1)c23)c56)N(c1cccc(C)c1)c1cccc(C)c1 # https://www.sciencedirect.com/science/article/pii/S1385894721059532 87.79850769042969
+10e C1=CC2=C(N=C1)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 87.50406646728516
+10c Cc1ccc2nc3-c4cccc5-c6cccc7-c8cccc(c8N(c67)c45)-c3nc2c1 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 86.56253051757812
+10f N#CC1=NC2=C(N=C1C#N)c1cccc3-c4cccc5-c6cccc2c6N(c45)c13 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 86.53262329101562
+229 O=c1c2ccccc2oc2cc(N3c4ccccc4C(C4c5ccccc5-c5ccccc54)c4ccccc43)ccc12 86.44020080566406
+154 Cc1cc(C2c3ccccc3-c3ccccc32)cc(C)c1B1c2ccccc2B(c2c(C)cc(C3c4ccccc4-c4ccccc43)cc2C)c2ccccc21 86.21492767333984
+425 O=C(c1ccccc1)c1cc2ccc1CCc1ccc(cc1-c1ccc(N(c3ccccc3)c3ccccc3)cc1)CC2 86.1819076538086
+247 CCCCCCCCCCCCOc1ccc(C(=O)c2ccc(N3c4ccccc4C(C)(C)c4ccccc43)cc2)cc1 86.14498138427734
+175 N#Cc1cc(C#N)cc(-n2c3ccccc3c3ccccc32)c1 86.1440200805664
+10d O=C1C2=C(C=CC=C2)C(=O)C2=C1C=CC1=NC3=C(N=C21)c1cccc2-c4cccc5-c6cccc3c6N(c45)c12 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 85.67749786376953
+DPTZ-DFQX CC(C)(C)C1=CC2=C(C=C1)N(c1c2cc(cc1C1=CC2=C(C=C1)C1=NC3=CC(F)=C(F)C=C3N=C1C1=C2C=CC=C1)C(C)(C)C)C1=CC2=C3N(C4=CC=CC=C4SC3=C1)C1=CC=CC=C1S2 https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/chem.202202305 85.38288879394531
+47 N#Cc1nc2c3ccc(N4c5ccccc5Sc5ccccc54)cc3c3cc(N4c5ccccc5Sc5ccccc54)ccc3c2nc1C#N 84.67341613769531
+343 CC(C)(C(=O)c1ccc(N2c3ccccc3C(C)(C)c3ccccc32)cc1)C(=O)c1ccc(N2c3ccccc3C(C)(C)c3ccccc32)cc1 84.58031463623047
+138 COc1ccc2c(c1)c1cc(OC)ccc1n2-c1ccc(S(=O)(=O)c2ccc(-n3c4ccc(OC)cc4c4cc(OC)ccc43)cc2)cc1 84.48207092285156
+331 CC1(C)c2ccccc2N(c2c(F)cc(-c3nnc(-c4ccccc4)o3)cc2F)c2ccccc21 84.42894744873047
+10i BrC1=CC2=C(C=C1Br)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 84.0351791381836
+tBuDPACz-DPyM CC(C)(C)C1=CC=C(C=C1)N(C1=CC=C(C=C1)C(C)(C)C)C1=CC2=C(C=C1)N(c1ccc(cc21)N(C1=CC=C(C=C1)C(C)(C)C)C1=CC=C(C=C1)C(C)(C)C)C1=CC=C(C=N1)C(=O)C1=CC=C(N=C1)N1C2=C(C=C(C=C2)N(C2=CC=C(C=C2)C(C)(C)C)C2=CC=C(C=C2)C(C)(C)C)c2cc(ccc12)N(C1=CC=C(C=C1)C(C)(C)C)C1=CC=C(C=C1)C(C)(C)C # https://www.sciencedirect.com/science/article/pii/S0143720822003072 83.89909362792969
+389 COc1ccc2c(c1)c1cc(OC)ccc1n2-c1cccc(-n2c3ccc(OC)cc3c3cc(OC)ccc32)c1C#N 83.32701110839844
+415 CC(C)(C(=O)c1ccc(N2c3ccccc3Oc3ccccc32)cc1)C(=O)c1ccc(N2c3ccccc3Oc3ccccc32)cc1 82.74742126464844
+198 CC1(C)c2ccccc2-c2ccc(-c3c(F)c(F)c(-c4ccc5c(c4)C(C)(C)c4ccccc4-5)c4nsnc34)cc21 82.44247436523438
+10n BrC1=CC2=C(N=C1)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 82.200439453125
+419 F[B-]1(F)Oc2ccccc2-c2cc(-n3c4ccccc4c4ccccc43)cc[n+]21 81.55464172363281
+290 Cc1cc2cc(N3c4ccccc4Oc4ccccc43)ccc2c(=O)o1 81.37334442138672
+10j FC1=CC2=C(C=C1F)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 80.28150939941406
+10k FC1=CC2=C(C=C1)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 79.3751220703125
+186 FC(F)(F)c1cc(C(F)(F)F)n2c1-c1cccc[n+]1[B-]2(c1ccc(-n2c3ccccc3c3ccccc32)cc1)c1ccc(-n2c3ccccc3c3ccccc32)cc1 77.82678985595703
+10g S1C=C2N=C3C(=NC2=C1)c1cccc2-c4cccc5-c6cccc3c6N(c45)c12 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 76.76116180419922
+MeODPACz-DPyM COC1=CC=C(C=C1)N(C1=CC=C(OC)C=C1)C1=CC2=C(C=C1)N(c1ccc(cc21)N(C1=CC=C(OC)C=C1)C1=CC=C(OC)C=C1)C1=CC=C(C=N1)C(=O)C1=CC=C(N=C1)N1C2=C(C=C(C=C2)N(C2=CC=C(OC)C=C2)C2=CC=C(OC)C=C2)c2cc(ccc12)N(C1=CC=C(OC)C=C1)C1=CC=C(OC)C=C1 # https://www.sciencedirect.com/science/article/pii/S0143720822003072 76.06388854980469
+155 CCC(C)Oc1ccc(-c2cc(-c3ccc(-c4cc(-c5ccc(OC(C)CC)cc5)c(-c5cc(-c6cccc7ccccc67)cc(-c6cccc7ccccc67)c5)s4)c4nsnc34)sc2-c2cc(-c3cccc4ccccc34)cc(-c3cccc4ccccc34)c2)cc1 75.09689331054688
+OC2A2T-TPA O1C2=CC(OC3=NC(OC4=CC=CC(OC5=NC1=NC(=N5)C1=CC=CC=C1)=C4C1=CC=C(C=C1)N(C1=CC=CC=C1)C1=CC=CC=C1)=NC(=N3)C1=CC=CC=C1)=CC=C2 https://www.sciencedirect.com/science/article/pii/S1385894722036580 73.77694702148438
+4F-v-DABNA Fc1cccc(F)c1N1c2cc3N(c4cc(cc5N(c6ccccc6)c6ccccc6B(c3cc2B2c3ccccc3N(c3ccccc3)c3cc(cc1c23)N(C1=CC=CC=C1)C1=CC=CC=C1)c45)N(c1ccccc1)c1ccccc1)c1c(F)cccc1F # https://www.sciencedirect.com/science/article/pii/S1385894721059532 73.6080322265625
+4F-m-v-DABNA CC1=CC(=CC=C1)N(C1=CC(C)=CC=C1)c1cc2N(c3cccc(C)c3)c3cc(C)ccc3B3c4cc5B6c7ccc(C)cc7N(c7cccc(C)c7)c7cc(cc(N(c5cc4N(c(c1)c23)c1c(F)cccc1F)c1c(F)cccc1F)c67)N(c1cccc(C)c1)c1cccc(C)c1 # https://www.sciencedirect.com/science/article/pii/S1385894721059532 73.51068115234375
+70 FC(F)(F)c1cc(C(F)(F)F)n2c1-c1cccc[n+]1[B-]2(c1ccc(N(c2ccccc2)c2ccccc2)cc1)c1ccc(N(c2ccccc2)c2ccccc2)cc1 72.73860931396484
+10h FC(F)(F)C1=CC2=C(C=C1)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23 # https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202202232 72.33340454101562
+273 FC(F)(F)c1ccc(-c2nnc(-c3cc(-c4nnc(-c5ccc(C(F)(F)F)cc5)o4)c(-n4c5ccccc5c5ccccc54)cc3-n3c4ccccc4c4ccccc43)o2)cc1 65.27478790283203
+121 CC(C)(C)c1ccc(N(c2ccc(C3=NC4=NC(c5ccc(N(c6ccc(C(C)(C)C)cc6)c6ccc(C(C)(C)C)cc6)cc5)=NC5=NC(c6ccc(N(c7ccc(C(C)(C)C)cc7)c7ccc(C(C)(C)C)cc7)cc6)=NC(=N3)N45)cc2)c2ccc(C(C)(C)C)cc2)cc1 64.8724365234375
