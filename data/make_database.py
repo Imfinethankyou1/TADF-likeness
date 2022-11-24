@@ -9,6 +9,7 @@ import numpy as np
 import torch
 import pandas as pd
 import random
+import os
 random.seed(0)
 np.random.seed(seed=0)
 generator = rdNormalizedDescriptors.RDKit2DNormalized()
@@ -90,12 +91,39 @@ def make_npz_file(fn, output):
     with open(output,'wb') as f:
         pickle.dump(data,f)
 
+def make_k_fold(fn,k, output):
+    with open(fn) as f:
+        lines = f.readlines()
+    random.shuffle(lines)        
+    for j in range(k):
+        data = {'id':[],'prop':[], 'feats':[],'smiles':[]}
+        new_lines = lines[j::k]
+        with open(f'{output}_{j}.txt','w') as f:
+            for line in new_lines:
+                f.write(line)
+        x_list, _, smiles_list = make_data(new_lines, 0)
+        for i in range(len(new_lines)):
+            if not isinstance(x_list[i], str):
+                idx = new_lines[i].split()[0]
+                #print(idx)
+                data['id'].append(idx)
+                y = float(0.0)
+                data['prop'].append(y)
+                data['feats'].append(x_list[i])
+                data['smiles'].append(smiles_list[i])
+        with open(f'origin/{output}_{j}.npz','wb') as f:
+            pickle.dump(data,f)
 
 
 if __name__ == '__main__':
     import glob
     import sys
-    filenames = ['total_train_data.txt']
-    #filenames = ['total_train_data.txt','random_2_log5.txt']
+    #filenames = ['unseen-TADF.txt']
+    if not os.path.isdir('origin'):
+        os.system('mkdir origin/')
+    filenames = ['total_train_data.txt','pubchem_200k.txt', 'unseen-TADF.txt' ,'vis_chromophore.txt']
     for i in range(len(filenames)):
         make_npz_file(filenames[i],f'origin/{filenames[i].split(".")[0]}.npz')
+    
+    #fn = 'total_train_data.txt'
+    #make_k_fold(fn, 5, 'total_train_data')

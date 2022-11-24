@@ -1,7 +1,8 @@
 import rdkit
 from rdkit import Chem
 
-with open('../data/total_train_data.txt') as f:
+#with open('../data/total_train_data.txt') as f:
+with open('total_TADF.txt') as f:
     lines = f.readlines()
 
 smiles_list = [Chem.MolToSmiles(Chem.MolFromSmiles(line.strip().split()[1])) for line in lines]

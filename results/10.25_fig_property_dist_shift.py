@@ -31,25 +31,13 @@ for fn in fns:
         lines = f.readlines()
     for line in lines:
         homo, lumo, s1, t1, f, score = [float(val) for val in line.split()[2:]]
-        homo_tf, lumo_tf, s1_tf, est_tf = [True  for i in range(4)]
 
-        if homo < homo_c:
-            homo_tf = False
-        if lumo > lumo_c:
-            lumo_tf = False
-        if s1 > s1_uc or s1 < s1_lc:
-            s1_tf = False
-        if s1-t1 > est_c:
-            est_tf = False
-                    
-        tf_list = [homo_tf, lumo_tf, s1_tf, est_tf]
-        
-        for i in range(5):
-            if tf_list.count(True)==i: #and not True in tf_list[i:]:
-                homo_list[i].append(homo)
-                lumo_list[i].append(lumo)
-                s1_list[i].append(s1)
-                est_list[i].append(s1-t1)
+        i = int(score/10)-5
+        homo_list[i].append(homo)
+        lumo_list[i].append(lumo)
+        s1_list[i].append(s1)
+        est_list[i].append(s1-t1)
+
 colors = ['y','orange','r','purple','black']
 
 def obtain_mean_variance(vals):
@@ -102,10 +90,10 @@ values = ['50-60','60-70','70-80','80-90','90-100']
 labels = ['HOMO (eV)', 'LUMO (eV)', '$E(S_{1})$', '$\Delta E_{ST}$']
 colors = ['y','orange','r','purple','black']
 
-fig = plt.figure(figsize=(30,6))
+fig = plt.figure(figsize=(15,12))
 
 for i in range(4):
-    plt.subplot(1,4,i+1)
+    plt.subplot(2,2,i+1)
     sample_props = []
     variances = []
     for j in range(5):
@@ -113,8 +101,9 @@ for i in range(4):
         variances.append(properties[i][j][1])
 
     s = [80  for k in range(len(variances))]
-    plt.errorbar(values, sample_props, yerr=variances, fmt="o", marker='^', lw=2, color=colors[i],capsize=5, capthick=2)   
-    plt.scatter(values, sample_props, marker='^', color=colors[i], label=labels[i], s= s)
+    #plt.errorbar(values, sample_props, yerr=variances, fmt="o", marker='^', lw=2, color=colors[i],capsize=5, capthick=2)   
+    #plt.scatter(values, sample_props, marker='^', color=colors[i], label=labels[i], s= s)
+    plt.bar(values, sample_props, color=colors[i], label=labels[i])
     plt.xlabel(rf'TADF-likeness', fontsize=label_fontsize)
     plt.ylabel('$\Delta$', fontsize=label_fontsize, color='k')
     plt.tick_params(length=tick_length, width=tick_width, labelsize=tick_labelsize, labelcolor='k', color='k')

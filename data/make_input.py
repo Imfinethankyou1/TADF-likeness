@@ -12,15 +12,7 @@ import pandas as pd
 import random
 random.seed(0)
 np.random.seed(seed=0)
-#generator = MakeGenerator(("RDKit2D",))
 generator = rdNormalizedDescriptors.RDKit2DNormalized()
-#columns = []
-#for val in generator.columns:
-#    if not 'fr' in val[0]:
-#        columns.append(val)
-#generator.columns = columns
-#print(columns)
-#sys.exit()
 
 ind_list = random.sample([i for i in range(200)], 47)
 
@@ -115,7 +107,6 @@ def make_npz_file(fn, output, input_type):
     with open(output,'wb') as f:
         pickle.dump(data,f)
 
-
 def make_k_fold(fn,k, output):
     with open(fn) as f:
         lines = f.readlines()
@@ -140,11 +131,8 @@ def make_k_fold(fn,k, output):
             pickle.dump(data,f)
 
 
-
 if __name__ == '__main__':
     import glob
     import sys
-    fn = 'vis_chromophore_pretrain.txt'
-    make_k_fold(fn, 5, 'vis_chromophore_pretrain')
     fn = 'total_train_data.txt'
     make_k_fold(fn, 5, 'total_train_data')

@@ -12,9 +12,6 @@ CzPh3AQ CC1=CC=C2C(=O)C3=C(C=CC(=C3)C3=CC(=CC=C3)N3C4=C(C=CC=C4)c4ccccc34)C(=O)C
 CzPh2AQ CC1=CC=C2C(=O)C3=C(C=CC(=C3)C3=CC=CC=C3N3C4=C(C=CC=C4)c4ccccc34)C(=O)C2=C1 # https://www.sciencedirect.com/science/article/pii/S1385894722017156
 KCCz CC1=CC(C2=CC=C(C=C2)N2C3=C(C=CC=C3)c3ccccc23)=C(C#N)C(C)=C1C(=O)C1=CC=C(C=C1)N1C2=C(C=CC=C2)c2ccccc12 # https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202200376
 KCTBC CC1=CC(C2=CC=C(C=C2)N2C3=C(C=C(C=C3)C(C)(C)C)c3cc(ccc23)C(C)(C)C)=C(C#N)C(C)=C1C(=O)C1=CC=C(C=C1)N1C2=C(C=C(C=C2)C(C)(C)C)c2cc(ccc12)C(C)(C)C # https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202200376
-DMAC-CNIM CN1C(C#N)=C(N=C1C1=CC=C(C=C1)N1C2=CC=CC=C2C(C)(C)C2=C1C=CC=C2)C#N # https://onlinelibrary.wiley.com/doi/full/10.1002/agt2.127
-DMAC-CNBIM CC1(C)C2=C(C=CC=C2)N(C2=CC=C(C=C2)C2=Nc3cc(C#N)c(cc3N2C2=CC=CC=C2)C#N)C2=C1C=CC=C2 # https://onlinelibrary.wiley.com/doi/full/10.1002/agt2.127
-DMAC-CNIB CC1(C)C2=CC=CC=C2N(C2=CC=C(C=C2)C2=NC(C#N)=C(C#N)N2C2=CC=CC=C2)C2=C1C=CC=C2 # https://onlinelibrary.wiley.com/doi/full/10.1002/agt2.127
 SFO-SPAC CC1=C2C3=C(C=CC=C3)C3(C2=C(F)C=C1)C1=CC(=CC=C1C(=O)C1=C3C=CC=C1)N1C2=CC=CC=C2C2(C3=CC=CC=C3C3=C2C=CC=C3)C2=C1C=CC=C2 # https://www.sciencedirect.com/science/article/pii/S1385894722007392
 SFO-DMAC CC1=C2C3=C(C=CC=C3)C3(C2=C(F)C=C1)C1=CC(=CC=C1C(=O)C1=C3C=CC=C1)N1C2=CC=CC=C2C(C)(C)C2=C1C=CC=C2 # https://www.sciencedirect.com/science/article/pii/S1385894722007392
 DMTO-DMAC CC1(C)C2=CC=CC=C2N(C2=CC=C3C(=O)C4=C(C=CC=C4)C4(C5=CC=CC=C5C5=C4C=CC=C5)C3=C2)C2=C1C=CC=C2 # https://iopscience.iop.org/article/10.35848/1882-0786/ac77d5/pdf

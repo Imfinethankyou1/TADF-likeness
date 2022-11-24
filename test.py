@@ -22,21 +22,8 @@ from ae_trainer import AETrainer
 
 parser = argparse.ArgumentParser(description='Input')
 parser.add_argument('--dataset_name',type=str,help='dataset name', default='123')
-parser.add_argument('--normal_class', type=int, default=0,
-              help='Specify the normal class of the dataset (all other classes are considered anomalous).')
 parser.add_argument('--net_name', type=str, help='neural Net name')
 parser.add_argument('--batch_size', type=int, default=10000, help='Batch size for mini-batch training.')
-parser.add_argument('--weight_decay', type=float, default=1e-6,
-              help='Weight decay (L2 penalty) hyperparameter for Deep SVDD objective.')
-parser.add_argument('--objective', type=str, default='one-class',
-              help='Specify Deep SVDD objective ("one-class" or "soft-boundary").')
-parser.add_argument('--nu', type=float, default=0.1, help='Deep SVDD hyperparameter nu (must be 0 < nu <= 1).')
-parser.add_argument('--ae_optimizer_name', type=str, default='adam',
-              help='Name of the optimizer to use for autoencoder pretraining.')
-parser.add_argument('--optimizer_name', type=str, default='adam',
-              help='Name of the optimizer to use for Deep SVDD network training.')
-parser.add_argument('--lr_milestone', type=float, default=0, 
-              help='Lr scheduler milestones at which lr is multiplied by 0.1. Can be multiple and must be increasing.')
 
 args = parser.parse_args()
 
@@ -87,7 +74,8 @@ torch.manual_seed(0)
 
 n_jobs_dataloader = 0
 
-save_model = './trained_model/TADF.pt'
+save_model = './trained_model/TADF_final.pt'
+#save_model = 'trained_model_ref/TADF.pt'
 #save_model = 'trained_model/prop_4_sig.pt'
 autoencoder = AutoEncoder(200)
 autoencoder.to(device)
@@ -105,16 +93,17 @@ trainer = AETrainer(autoencoder,
                     )
 
 data_list = []
-#for test_fname in ['data/origin/property_4.txt']:
-#for test_fname in ['data/origin/TADF-2022.txt']:
-for test_fname in ['data/origin/vis_chromophore_pretrain_4.txt']:
+#for test_fname in ['data/origin/vis_chromophore_pretrain_4.txt']:
+#for test_fname in ['data/origin/unseen-TADF.txt']:
+for test_fname in ['data/origin/pubchem_pretrain_200k.txt']:
+#for test_fname in ['data/origin/random_2_log5.txt']:
     uf_final = get_dataset_dataloader(test_fname,batch_size=args.batch_size, num_workers=16)
     trainer.ae_net.load_state_dict(torch.load(save_model))
+    trainer.ae_net.eval()
     #print('make test')
 
     unlabel_xs = uf_final[1]
     key_list = uf_final[-1]
-
 
     unlab = score(trainer, unlabel_xs).cpu().detach().numpy()
     unlab = unlab.reshape(-1)
@@ -144,8 +133,9 @@ for i in range(len(key_list)):
     #    print('not : ', new_key)
 new_key_list.sort(key=lambda x : line2likeness[x],reverse=True)
 
-#with open(f'data/sample/TADF-likeness-TADF-2022.txt','w') as f:
-with open(f'data/sample/TADF-likeness-chromophore.txt','w') as f:
+#with open(f'data/sample/TADF-likeness-unseen_11_23.txt','w') as f:
+with open(f'data/sample/TADF-likeness-pubchem_no_transfer_11_23.txt','w') as f:
+#with open(f'data/sample/TADF-likeness-LGD.txt','w') as f:
     for line in new_key_list:
         f.write(line+f' {line2likeness[line]}\n')
 

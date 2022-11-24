@@ -247,7 +247,7 @@ if ratio_on:
         print('lab : ',len(np.where(lab>threshold)[0])/ len(lab))
 
 color_list = ['#feb308','#0165fc','black','y','r','lime','violet','g']
-if True:
+if False:
 
 
     import matplotlib
