@@ -1,7 +1,5 @@
 import torch
 import torch.nn as nn
-#from torch.utils.data import DataLoader, Dataset, Subset
-#import random
 
 class AutoEncoder(nn.Module):
     #https://www.kaggle.com/code/rohitgr/autoencoders-tsne/notebook

@@ -9,11 +9,12 @@ import sys
 from model import *
 from ae_trainer import AETrainer
 import os
-import subprocess
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 import pickle
 from sklearn.preprocessing import MinMaxScaler
+from utils import score, set_cuda_visible_device
+import random
 y_scaler1 = MinMaxScaler()
 
 parser = argparse.ArgumentParser(description='Input')
@@ -59,34 +60,10 @@ def set_seed(seed):
 
 set_seed(0)
 
-def score(trainer, X):
-    net = trainer.ae_net
-    with torch.no_grad():
-        X = torch.FloatTensor(X).to(device)
-        y = net(X)
-        dist = torch.sum((y - X)**2, dim=1)
-        scores = 100-4*dist
-    return scores
 
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
-# set gpu option
-def set_cuda_visible_device(ngpus):
-    empty = []
-    for i in range(3,4):
-        command = ['nvidia-smi','-i',str(i)]
-        p = subprocess.Popen(command, stdout=subprocess.PIPE)
-        result = str(p.communicate()[0])
-        count = result.count('No running')
-        if count>0:
-            empty.append(i)
-    if len(empty)<ngpus:
-        assert False, f"Available gpus are less than required: ngpus={ngpus}, empty={len(empty)}"
-    cmd = ''
-    for i in range(ngpus):
-        cmd += str(empty[i]) + ','
-    return cmd.rstrip(',')
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 cmd = set_cuda_visible_device(1)
 os.environ['CUDA_VISIBLE_DEVICES'] = cmd
@@ -124,9 +101,9 @@ k_fold = 1
 if args.train:
     for model_ind in range(k_fold):
         fns = []
-        train_dataset = get_dataset_dataloader(args.tdata,split_ratio=0.9, batch_size=args.batch_size, num_workers=16, train=True)
+        train_dataset = get_dataset_dataloader(args.tdata, batch_size=args.batch_size, num_workers=8, train=True)
         if args.vdata is not None:
-            val_dataset = get_dataset_dataloader(args.vdata,split_ratio=0.9, batch_size=args.batch_size, num_workers=16, train=True)
+            val_dataset = get_dataset_dataloader(args.vdata, batch_size=args.batch_size, num_workers=8, train=True)
             val_dataset = val_dataset[0]
         else:
             val_dataset = None
@@ -154,9 +131,8 @@ if args.train:
             trainer.ae_net.load_state_dict(torch.load(args.pre_save_model))
         trainer.train()
 
-
 if dataset is None:
-    dataset = get_dataset_dataloader(args.tdata, split_ratio=0.9, batch_size=args.batch_size, num_workers=16, train=True)
+    dataset = get_dataset_dataloader(args.tdata, batch_size=args.batch_size, num_workers=16, train=True)
 
 autoencoder = AutoEncoder(200)
 trainer = AETrainer(autoencoder,
@@ -171,117 +147,21 @@ trainer = AETrainer(autoencoder,
                     device = device,
                     lr_decay = 1.0
                     )
-unlabel_xs_list = []
 
+#Model load part    
+save_model = args.save_model
+trainer.ae_net.load_state_dict(torch.load(save_model))
+trainer.ae_net.eval()
 
-test_fns = args.test_data
+train_likeness = score(trainer, dataset[1], device).cpu().detach().numpy().reshape(-1)
+print(f'train score : {np.mean(train_likeness)}')
 
-for test_fname in test_fns:
-    uf_final = get_dataset_dataloader(test_fname,batch_size=args.batch_size, num_workers=16)
-    unlabel_xs = uf_final[1]
-    unlabel_xs_list.append(unlabel_xs)
-
-lab_list = []
+print('test start')
 unlab_list = []
-for model_ind in range(1):
-    #Model load part    
-    if True:
-        save_model = args.save_model
-        trainer.ae_net.load_state_dict(torch.load(save_model))
-        trainer.ae_net.eval()
-        
-        lab = score(trainer, dataset[1]).cpu().detach().numpy()
-        #lab= y_scaler1.fit_transform(lab.reshape(-1,1))
-        lab = lab.reshape(-1)
-        if len(lab_list) == 0:
-            lab_list.append(lab)
-        else:
-            lab_list[0]+=lab
-        print(f'train score : {np.mean(lab)}')
+for test_fname in args.test_data:
+    _, unlabel_xs, _ = get_dataset_dataloader(test_fname,batch_size=args.batch_size, num_workers=8)
+    likeness_list = score(trainer, unlabel_xs, device).cpu().detach().numpy().reshape(-1)
+    unlab_list.append(likeness_list)
 
-        print('make test')
-        j = 0
-        for unlabel_xs in unlabel_xs_list:
-            unlab = score(trainer, unlabel_xs).cpu().detach().numpy()
-            unlab = unlab.reshape(-1)
-            if len(unlab_list) == j:
-                unlab_list.append(unlab)
-            else:
-                unlab_list[j]+=unlab
-            j+=1
-
-
-lab = lab_list[0]
-unlab_list = [unlab for unlab in unlab_list]
-labels = args.vlabels
-
-colors = ['y','r','lime','violet','g','orange','b','black','grey'][:len(labels)]
-
-def calc_auroc(pos, neg):
-    from sklearn.metrics import roc_auc_score,roc_curve
-    import numpy as np
-
-    true_list = np.array([1 for _ in range(len(pos))] + [0 for _ in range(len(neg))])
-    score_list = np.array(pos + neg)
-
-    return roc_auc_score(true_list, score_list)
-
-#print('AUROC 0,1: ', calc_auroc(unlab_list[0].tolist(), unlab_list[1].tolist()) )
-#print('AUROC 0,2: ', calc_auroc(unlab_list[0].tolist(), unlab_list[2].tolist()) )
-print('test mean : ',[unlab.mean() for unlab in unlab_list])
-
-
-remain_list =[ []  for i in range(len(labels))]
-threshold_list = []
-ratio_on = False
-if ratio_on:
-    for ratio in range(50):
-        lab = lab[lab.argsort()]
-        threshold = lab[int(ratio*len(lab)/100)]
-        threshold_list.append(threshold)
-        print(threshold, end = ' ')
-        for j in range(len(unlab_list)):
-            unlab = unlab_list[j]
-            print(len(np.where(unlab>threshold)[0])/len(unlab), end =' ')
-            remain_list[j].append( len(np.where(unlab>threshold)[0])/len(unlab) )
-        print('lab : ',len(np.where(lab>threshold)[0])/ len(lab))
-
-color_list = ['#feb308','#0165fc','black','y','r','lime','violet','g']
-if False:
-
-
-    import matplotlib
-    from matplotlib.ticker import MultipleLocator
-    label_fontsize = 20
-    tick_length = 6
-    tick_width = 1.5
-    tick_labelsize = 16
-    legend_fontsize = 16
-
-    plt.ylim([0.0, 0.2])
-    plt.xlim([0.0, 100.1])
-    #plt.yticks([0,0.1,0.2,0.3])
-    plt.yticks([0,0.05,0.1,0.15,0.2])
-    plt.xticks([0,20,40,60,80,100])
-    for i in range(len(args.vlabels)):
-        sns.kdeplot(unlab_list[i], color=color_list[i], label=args.vlabels[i])
-
-    #ax2.scatter(nnpp_r_cut_list, nnpp_norm_err_mean, marker='v', color='b')
-    plt.xlabel(rf'TADF-likeness', fontsize=label_fontsize)
-    plt.ylabel('Density', fontsize=label_fontsize, color='k')
-    #ax2.set_ylabel('$\Delta N_{nc}$ (%)', fontsize=label_fontsize, color='b')
-    plt.tick_params(length=tick_length, width=tick_width, labelsize=tick_labelsize, labelcolor='k', color='k')
-    matplotlib.rcParams['ytick.major.pad'] = 3
-    plt.tight_layout()
-    plt.rc('font', size=40)
-    plt.legend(prop={'size': 16}, loc='upper left', ncol=1)
-    plt.show()
-
-plot_on = True
-if plot_on:
-    j = 0
-    datas = []
-    for unlab in unlab_list:
-        datas.append(unlab)
-        j +=1
-    violin_plot(datas, labels, colors)
+colors = ['y','r','lime','violet','g','orange','b','black','grey'][:len(args.vlabels)]
+violin_plot(unlab_list, args.vlabels, colors)

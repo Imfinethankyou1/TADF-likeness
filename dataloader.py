@@ -11,21 +11,12 @@ from rdkit.Chem import rdMolDescriptors
 import pickle
 
 
-def get_dataset_dataloader(fn, split_ratio=0.9,batch_size=8, shuffle=True,
+def get_dataset_dataloader(fn, batch_size=8, shuffle=True,
                            num_workers=1, length=None, train=False):
     dataset = DescriptorDataset(fn, length)
     dataloader = DataLoader(dataset, batch_size=batch_size,
                             num_workers=num_workers, shuffle=shuffle, pin_memory=True)
     
-    #train_size = int(split_ratio * len(dataset))
-    #test_size = len(dataset) - train_size
-    #train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
-    
-    #train_dataloader = DataLoader(train_dataset, batch_size=batch_size,
-    #                        num_workers=num_workers, shuffle=shuffle, pin_memory=True)
-    #test_dataloader = DataLoader(test_dataset, batch_size=batch_size,
-    #                        num_workers=num_workers, shuffle=shuffle, pin_memory=True)
-    end = True
     X_train = []
     key_list = []
     train_idx_list = []        
