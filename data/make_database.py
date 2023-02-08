@@ -121,7 +121,8 @@ if __name__ == '__main__':
     #filenames = ['unseen-TADF.txt']
     if not os.path.isdir('origin'):
         os.system('mkdir origin/')
-    filenames = ['total_train_data.txt','pubchem_200k.txt', 'unseen-TADF.txt' ,'vis_chromophore.txt']
+    #filenames = ['total_train_data.txt','pubchem_200k.txt', 'unseen-TADF.txt' ,'vis_chromophore.txt']
+    filenames = [f'total_train_data_{i}.txt' for i in range(5)]
     for i in range(len(filenames)):
         make_npz_file(filenames[i],f'origin/{filenames[i].split(".")[0]}.npz')
     

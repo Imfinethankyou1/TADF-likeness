@@ -77,6 +77,6 @@ lines = []
 for fn in fns:
     lines+=read_data(fn,ind2smiles)
 
-with open('total_QC_data.txt','w') as f:
+with open('sampled_500_molecules_QC_data.txt','w') as f:
     for line in lines:
         f.write(line)

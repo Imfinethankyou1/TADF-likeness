@@ -2,22 +2,22 @@ import glob
 import rdkit
 from rdkit import Chem
 import random
+import matplotlib
+import matplotlib.ticker as ticker
 import matplotlib.pylab as plt
 import seaborn as sns
 import numpy as np
 import math 
-from matplotlib.ticker import MaxNLocator
 
 random.seed(0)
-fns = ['./total_QC_data.txt']
+fns = ['sampled_500_molecules_QC_data.txt']
 
-
-
-homo_c = -6.5
-lumo_c = -1
-s1_lc = 1.6
-s1_uc = 3.1
-est_c = 0.4
+#plt environment
+label_fontsize = 20
+tick_length = 6
+tick_width = 1.5
+tick_labelsize = 16
+legend_fontsize = 16
 
 smiles_list = []
 
@@ -55,7 +55,7 @@ def read_data(filename):
     pub_ps =  [ps for ps in [pub_homo,pub_lumo, pub_s1, pub_st] ]
     return pub_ps
 
-tadf_ps = read_data('./total_train_QC_data.txt')
+tadf_ps = read_data('../data/total_train_QC_data.txt')
 
 for fn in fns:
     with open(fn) as f:
@@ -64,43 +64,24 @@ for fn in fns:
         homo, lumo, s1, t1, f, score = [float(val) for val in line.split()[2:]]
         est = s1-t1
         i = int(score/interval)
-        if  i == 9 and est > 0.4:
-            print(line)
-
-
+        #if  i == 9 and est > 0.4:
+        #    print(line)
         homo_list[i].append(homo)
         lumo_list[i].append(lumo)
         s1_list[i].append(s1)
         est_list[i].append(est)
-
-#sys.exit()
-colors = ['y','orange','r','purple','black']
-
 
 homo_list =  [homo_list[i]  for i in range(total_num)]
 lumo_list =  [lumo_list[i]  for i in range(total_num)]
 s1_list =  [s1_list[i]  for i in range(total_num)]
 est_list = [est_list[i]  for i in range(total_num)]
 
-
 properties = [homo_list, lumo_list, s1_list, est_list]
-
-import matplotlib
-from matplotlib.ticker import MultipleLocator
-import matplotlib.ticker as ticker
-
-label_fontsize = 20
-tick_length = 6
-tick_width = 1.5
-tick_labelsize = 16
-legend_fontsize = 16
-
-
 
 values =  [f'{50+int(i*interval)}-{50+int((i+1)*interval)}' for i in range(5)] +['TADF']
 labels = ['HOMO (eV)', 'LUMO (eV)', '$E(S_{1})$', '$\Delta E_{ST}$']
 colors = ['y','orange','r','purple','black']
-ylim_list = [[-7.7,-1.9], [-3.0,1.65], [0.5, 6.5], [-.06, 2.2] ]
+ylim_list = [[-6.8,-4.0], [-3.0,0.0], [1.5, 5.3], [-0.2, 2.0] ]
 
 fig = plt.figure(figsize=(15,12))
 

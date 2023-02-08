@@ -14,6 +14,19 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import MinMaxScaler
 from matplotlib.patches import Rectangle
+import math
+
+def obtain_mean_variance(vals):
+    mean = sum(vals) / len(vals)
+    vsum = 0
+    for val in vals:
+        vsum = vsum + (val - mean)**2
+    variance = vsum / len(vals)
+
+    std = math.sqrt(variance)
+    std = np.std(vals)
+    return mean, std
+
 
 sns.set()
 
@@ -55,7 +68,8 @@ def cal_max_sim(smiles):
         if sim > max_sim:
             max_sim = sim
             nearest_smiles = smiles_list[i]
-    
+    if max_sim ==0:
+        nearest_smiles = 'None'
     #if smiles == 'C1=CC2=C(N=C1)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23':
     #if smiles == 'CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1ccc(-c2nc(-c3ccc(P(=O)(c4ccccc4)c4ccccc4)cc3)nc(-c3ccc(P(=O)(c4ccccc4)c4ccccc4)cc3)n2)cc1':
     #    sns.kdeplot(sim_list)
@@ -66,14 +80,16 @@ def cal_max_sim(smiles):
 #label_ind  = 0
 import pandas as pd
 import seaborn as sns
-fns = ['TADF-likeness-unseen-TADF.txt']
+fns = [ f'TADF-likeness_train_data_{i}.txt' for i in range(4)]
 ratio = 0.8
 #ratio = 0.6
 
-for fn in fns:
-    
-    with open(fn) as f:
-        lines = f.readlines()
+
+if True:    
+    lines = []
+    for fn in fns:
+        with open(fn) as f:
+            lines += f.readlines()
     smiles_candidates = []
     for line in lines:
         ind, smiles = line.strip().split()[0:2]
@@ -110,12 +126,13 @@ for fn in fns:
 
     tmp = likeness_list[:]
     tmp.sort()
-    cutoff_likeness = tmp[int(len(tmp)*(1-ratio))]
-
-    print(cutoff_likeness)
+    #cutoff_likeness = tmp[int(len(tmp)*(1-ratio))]
+    #print(cutoff_likeness)
+    mean, std =obtain_mean_variance(likeness_list)
+    print(mean, std, mean- std)
     #sys.exit()
+    #print(sum(likeness_list)/len(likeness_list))
     cutoff_likeness = 88.60424263    
-    print('mean likeness : ', sum(likeness_list)/len(likeness_list))
     print('likeness cutoff :', cutoff_likeness)
     print('sim cutoff :', cutoff_sim)
     upper_likeness_list, lower_likeness_list = [], []
@@ -133,9 +150,9 @@ for fn in fns:
             lower_sim_list.append(sim)
             lower_likeness_list.append(likeness)
                 
-    print('cutoff 0.6 upper  : ',len(upper_sim_list), count)
+    print('cutoff likeness upper  : ',len(upper_sim_list), count)
     print('min : ',min(upper_sim_list))
-    with open('suppoting_sim_data.txt','w') as f:
+    with open('suppoting_sim_data_train.txt','w') as f:
         for ind, smiles, sim, likeness, nearest_smiles in zip(ind_list, sort_smiles_list, sort_sim_list, likeness_list, sort_nearest_smiles_list):
             f.write(f'{ind} {smiles} {likeness} {sim} {nearest_smiles}\n')
             #if likeness > cutoff_likeness:

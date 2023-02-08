@@ -55,7 +55,8 @@ def cal_max_sim(smiles):
         if sim > max_sim:
             max_sim = sim
             nearest_smiles = smiles_list[i]
-    
+    if max_sim ==0:
+        nearest_smiles = 'None'
     #if smiles == 'C1=CC2=C(N=C1)N=C1C(=N2)c2cccc3-c4cccc5-c6cccc1c6N(c45)c23':
     #if smiles == 'CC(C)(C)c1ccc2c(c1)c1cc(C(C)(C)C)ccc1n2-c1ccc(-c2nc(-c3ccc(P(=O)(c4ccccc4)c4ccccc4)cc3)nc(-c3ccc(P(=O)(c4ccccc4)c4ccccc4)cc3)n2)cc1':
     #    sns.kdeplot(sim_list)
@@ -66,7 +67,8 @@ def cal_max_sim(smiles):
 #label_ind  = 0
 import pandas as pd
 import seaborn as sns
-fns = ['TADF-likeness-unseen-TADF.txt']
+#fns = ['TADF-likeness-vis_chromophore.txt']
+fns = ['TADF-likeness-pubchem.txt']
 ratio = 0.8
 #ratio = 0.6
 
@@ -110,20 +112,16 @@ for fn in fns:
 
     tmp = likeness_list[:]
     tmp.sort()
-    cutoff_likeness = tmp[int(len(tmp)*(1-ratio))]
-
-    print(cutoff_likeness)
-    #sys.exit()
+    #cutoff_likeness = tmp[int(len(tmp)*(1-ratio))]
     cutoff_likeness = 88.60424263    
-    print('mean likeness : ', sum(likeness_list)/len(likeness_list))
     print('likeness cutoff :', cutoff_likeness)
     print('sim cutoff :', cutoff_sim)
     upper_likeness_list, lower_likeness_list = [], []
     upper_sim_list, lower_sim_list = [] , []
     count = 0
     for likeness, sim in zip(likeness_list, sort_sim_list):
-        if likeness > cutoff_likeness:
         #if sim < cutoff_sim:
+        if likeness > cutoff_likeness:
         #if sim > 0.5:
             upper_sim_list.append(sim)
             upper_likeness_list.append(likeness)
@@ -133,13 +131,13 @@ for fn in fns:
             lower_sim_list.append(sim)
             lower_likeness_list.append(likeness)
                 
-    print('cutoff 0.6 upper  : ',len(upper_sim_list), count)
+    print('cutoff likeness upper  : ',len(upper_sim_list), count)
     print('min : ',min(upper_sim_list))
-    with open('suppoting_sim_data.txt','w') as f:
-        for ind, smiles, sim, likeness, nearest_smiles in zip(ind_list, sort_smiles_list, sort_sim_list, likeness_list, sort_nearest_smiles_list):
-            f.write(f'{ind} {smiles} {likeness} {sim} {nearest_smiles}\n')
-            #if likeness > cutoff_likeness:
-            #    print(ind, smiles, sim, likeness, nearest_smiles)    
+    #with open('suppoting_sim_data_chromophore.txt','w') as f:
+    #    for ind, smiles, sim, likeness, nearest_smiles in zip(ind_list, sort_smiles_list, sort_sim_list, likeness_list, sort_nearest_smiles_list):
+    #        f.write(f'{ind} {smiles} {likeness} {sim} {nearest_smiles}\n')
+    #        if likeness > cutoff_likeness:
+    #            print(ind, smiles, sim, likeness, nearest_smiles)    
                 
 
     colors = ['violet','silver','springgreen','gold','deepskyblue']

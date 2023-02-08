@@ -7,6 +7,7 @@ from rdkit.Chem import AllChem
 import os
 from ase.io import read
 from multiprocessing import Pool
+import pickle
 random.seed(0)
 
 
@@ -46,7 +47,7 @@ def canonical_and_rm_duple(smiles_list):
     return smiles_list
 
 if __name__ == '__main__':
-    os.system('wget https://figshare.com/ndownloader/files/23637518')
+    #os.system('wget https://figshare.com/ndownloader/files/23637518')
     
     csv = pd.read_csv('23637518')
 
@@ -54,25 +55,50 @@ if __name__ == '__main__':
     smiles_list = []
     feature_list = []
     vis_smiles_list = []
+    smiles2ref = {}
+    smiles2sol = {}
+
     for i in range(len(csv['Solvent'])):
         sol = csv['Solvent'][i]
-        #if sol == 'Cc1ccccc1':
         if True:
             if str(csv['Emission max (nm)'][i]) != 'nan':
                 color =  float(str(csv['Emission max (nm)'][i]))
+                print(csv['Emission max (nm)'][i])
                 eV = 1240/color
                 smiles_list.append(csv['Chromophore'][i])
                 if 1.6 < eV < 3.1: # make visible_range_fluorescence
                     vis_smiles_list.append(csv['Chromophore'][i])
+                    smiles = csv['Chromophore'][i]
+                    smiles = Chem.MolToSmiles(Chem.MolFromSmiles(smiles))
+
+                    ref = csv['Reference'][i]
+                    if not smiles in smiles2ref.keys():
+                        smiles2ref[smiles] = [ref]
+                    else:
+                        smiles2ref[smiles] += [ref]
+
+                    if not smiles in smiles2sol.keys():
+                        smiles2sol[smiles] = [sol]
+                    else:
+                        smiles2sol[smiles] += [sol]
+
+
+
     smiles_list = canonical_and_rm_duple(smiles_list)
     vis_smiles_list = canonical_and_rm_duple(vis_smiles_list)
+
     with open('total_chromophore.txt','w') as f:
         for i, smiles in enumerate(smiles_list):
             f.write(f"{i} {smiles}\n")
 
-    with open('vis_chromophore.txt','w') as f:
+    with open('vis_chromophore_test.txt','w') as f:
         for i, smiles in enumerate(vis_smiles_list):
             f.write(f"{i} {smiles}\n")
 
     count = len(smiles_list)
-    print('Total toluene solvent data : ', count)
+    print('Total data : ', count)
+
+    with open('smiles2ref.pickle', 'wb') as f:
+        pickle.dump(smiles2ref, f, pickle.HIGHEST_PROTOCOL) 
+    with open('smiles2sol.pickle', 'wb') as f:
+        pickle.dump(smiles2sol, f, pickle.HIGHEST_PROTOCOL) 

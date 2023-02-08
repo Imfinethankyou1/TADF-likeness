@@ -7,7 +7,8 @@ def score(trainer, X, device):
         X = torch.FloatTensor(X).to(device)
         y = net(X)
         dist = torch.sum((y - X)**2, dim=1)
-        scores = 100-4*dist
+        scores = 100 - 4*dist
+        #scores = 100*torch.exp(-1*dist)
     return scores
 
 

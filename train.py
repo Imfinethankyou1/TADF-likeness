@@ -9,13 +9,10 @@ import sys
 from model import *
 from ae_trainer import AETrainer
 import os
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
 import pickle
-from sklearn.preprocessing import MinMaxScaler
 from utils import score, set_cuda_visible_device
 import random
-y_scaler1 = MinMaxScaler()
+import math
 
 parser = argparse.ArgumentParser(description='Input')
 parser.add_argument('--batch_size', type=int, default=10000, help='Batch size for mini-batch training.')
@@ -51,6 +48,9 @@ parser.add_argument('--pre_save_model', type=str, default=None,
 
 args = parser.parse_args()
 args.tdata = args.tdata.split()
+
+
+args.tdata = [ '../TADF-AE/'+data  for data in args.tdata]
 args.test_data = args.test_data.split()
 args.vlabels = args.vlabels.split()
 def set_seed(seed):
@@ -94,6 +94,18 @@ def violin_plot(datas, labels, colors):
 
     plt.show()
 
+def obtain_mean_variance(vals):
+    mean = sum(vals) / len(vals)
+    vsum = 0
+    for val in vals:
+        vsum = vsum + (val - mean)**2
+    variance = vsum / len(vals)
+
+    std = math.sqrt(variance)
+    std = np.std(vals)
+    return mean, std
+
+
 
 plt.rc('font', size=10)
 dataset = None
@@ -108,6 +120,8 @@ if args.train:
         else:
             val_dataset = None
         X_train = train_dataset[1]
+
+
         print('num_descriptor : ',len(X_train[0]))
         dataset = train_dataset
         save_model = args.save_model
@@ -153,13 +167,24 @@ save_model = args.save_model
 trainer.ae_net.load_state_dict(torch.load(save_model))
 trainer.ae_net.eval()
 
+
+#for x in dataset[1]:
+#    print(x)
+#print(np.mean(dataset[1]))
+#sys.exit()
+
 train_likeness = score(trainer, dataset[1], device).cpu().detach().numpy().reshape(-1)
 print(f'train score : {np.mean(train_likeness)}')
+
+mean, std = obtain_mean_variance(train_likeness)
+
+print('train 1. mean 2. std : ', mean, std)
 
 print('test start')
 unlab_list = []
 for test_fname in args.test_data:
     _, unlabel_xs, _ = get_dataset_dataloader(test_fname,batch_size=args.batch_size, num_workers=8)
+        
     likeness_list = score(trainer, unlabel_xs, device).cpu().detach().numpy().reshape(-1)
     unlab_list.append(likeness_list)
 
