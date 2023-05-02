@@ -1,0 +1,4 @@
+L1 c1ccc(-c2cc(-c3ccc(-n4c5ccccc5c5c6c7ccccc7n(-c7ccc(-c8cc(-c9ccccc9)nc(-c9ccccc9)n8)cc7)c6ccc54)cc3)nc(-c3ccccc3)n2)cc1 98.5899429321289
+J1 c1ccc(-c2cc(-c3ccc(-n4c5ccccc5c5cc(N(c6ccccc6)c6ccccc6)ccc54)cc3)nc(-c3ccccc3)n2)cc1 96.21769714355469
+J2 c1ccc(-c2cc(-c3ccccc3)nc(-c3ccc(-n4c5ccccc5c5cc(N(c6ccccc6)c6ccccc6)ccc54)cc3)n2)cc1 96.19535827636719
+F1 c1ccc2c(c1)Oc1ccccc1N2c1ccc(-c2ccncc2)cc1 90.57262420654297
