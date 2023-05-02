@@ -42,3 +42,8 @@
    source train_vis_chromophore.sh
    source train_TADF.sh
 ```
+
+
+## How to see the results in our paper
+-----------------
+There are DFT calculation results, TADF-likenss scores of molecules in various database, and codes for showing results in results directory
