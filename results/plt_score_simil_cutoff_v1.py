@@ -67,89 +67,125 @@ def cal_max_sim(smiles):
 #label_ind  = 0
 import pandas as pd
 import seaborn as sns
-#fns = ['TADF-likeness-vis_chromophore.txt']
-fns = ['TADF-likeness-pubchem.txt']
+#fns = ['TADF-likeness-vis_chromophore.txt', 'TADF-likeness-pubchem.txt', 'TADF-likeness-unseen-TADF.txt']
+#fns = ['virtual_screening_data_gen/target_TADF_likeness.txt']
+fns = ['virtual_screening_data_gen/can_DA_likeness.txt']
 ratio = 0.8
 #ratio = 0.6
-
+upper_sim_list, lower_sim_list = [] , []
+smiles2data = {}
+total_lines = []
+likeness_list = []
+smiles_candidates = []
 for fn in fns:
     
     with open(fn) as f:
         lines = f.readlines()
-    smiles_candidates = []
+        total_lines += lines
+    if 'chromophore' in fn:
+        data = 'Chromo'
+    elif 'pubchem' in fn:
+        data = 'Pub'
+    else:
+        data = 'TADF'
     for line in lines:
         ind, smiles = line.strip().split()[0:2]
         smiles_candidates.append(smiles)
-    max_sim_list = list(multiprocessing(cal_max_sim, smiles_candidates, 8))
-
-    nearest_smiles_list = []
-    new_sim_list = []
-    for sim, nearest_smiles in max_sim_list:
-        new_sim_list.append(sim)
-        nearest_smiles_list.append(nearest_smiles)
-        
-    max_sim_list = new_sim_list
-    for_sort = list(zip(max_sim_list,lines,nearest_smiles_list))
-    for_sort.sort(key=lambda x: x[0])
-    
-    sort_sim_list = []
-    likeness_list = []
-    sort_smiles_list = []
-    ind_list = []
-    sort_nearest_smiles_list = []
-    print('SMILES likeness Sim')
-    for sim, line, nearest_smiles in for_sort:
-        sort_sim_list.append(float(sim))
+        smiles2data[smiles] = data
         likeness = float(line.strip().split()[-1])
-        ind, smiles = line.strip().split()[:2] 
         likeness_list.append(likeness)
-        sort_smiles_list.append(smiles)
-        sort_nearest_smiles_list.append(nearest_smiles)
-        ind_list.append(ind)
-    #cutoff_sim = sort_sim_list[int(len(sort_sim_list)*(1-ratio))]
+max_sim_list = list(multiprocessing(cal_max_sim, smiles_candidates, 8))
+
+nearest_smiles_list = []
+new_sim_list = []
+for sim, nearest_smiles in max_sim_list:
+    new_sim_list.append(sim)
+    nearest_smiles_list.append(nearest_smiles)
     
-    cutoff_sim = 0.6
+max_sim_list = new_sim_list
+print( len(max_sim_list), len(likeness_list), len(total_lines), len(nearest_smiles_list) )
+assert len(max_sim_list) == len(likeness_list) == len(total_lines) == len(nearest_smiles_list)
+for_sort = list(zip(max_sim_list,total_lines, likeness_list ,nearest_smiles_list))
+for_sort.sort(key=lambda x: x[0], reverse=True)
 
-    tmp = likeness_list[:]
-    tmp.sort()
-    #cutoff_likeness = tmp[int(len(tmp)*(1-ratio))]
-    cutoff_likeness = 88.60424263    
-    print('likeness cutoff :', cutoff_likeness)
-    print('sim cutoff :', cutoff_sim)
-    upper_likeness_list, lower_likeness_list = [], []
-    upper_sim_list, lower_sim_list = [] , []
-    count = 0
-    for likeness, sim in zip(likeness_list, sort_sim_list):
-        #if sim < cutoff_sim:
-        if likeness > cutoff_likeness:
-        #if sim > 0.5:
-            upper_sim_list.append(sim)
-            upper_likeness_list.append(likeness)
-            if sim < cutoff_sim:
-                count +=1
-        else:
-            lower_sim_list.append(sim)
-            lower_likeness_list.append(likeness)
-                
-    print('cutoff likeness upper  : ',len(upper_sim_list), count)
-    print('min : ',min(upper_sim_list))
-    #with open('suppoting_sim_data_chromophore.txt','w') as f:
-    #    for ind, smiles, sim, likeness, nearest_smiles in zip(ind_list, sort_smiles_list, sort_sim_list, likeness_list, sort_nearest_smiles_list):
-    #        f.write(f'{ind} {smiles} {likeness} {sim} {nearest_smiles}\n')
-    #        if likeness > cutoff_likeness:
-    #            print(ind, smiles, sim, likeness, nearest_smiles)    
-                
+sort_sim_list = []
+likeness_list = []
+sort_smiles_list = []
+ind_list = []
+sort_nearest_smiles_list = []
+idx = 1
+tadf_count = 0
+chromo_count = 0
+print('SMILES Near-SMILES likeness Sim Data')
+print('TADF Chromo Total')
+tadf_sim_list = []
 
-    colors = ['violet','silver','springgreen','gold','deepskyblue']
-    x_start = 60
+for sim, line, likeness, nearest_smiles in for_sort[:100]:
+    sort_sim_list.append(float(sim))
+    likeness_ = float(line.strip().split()[-1])
+    assert likeness ==likeness_
+    ind, smiles = line.strip().split()[:2] 
+    likeness_list.append(likeness)
+    sort_smiles_list.append(smiles)
+    sort_nearest_smiles_list.append(nearest_smiles)    
+    ind_list.append(ind)
+    data = smiles2data[smiles]
+    tadf_sim_list.append(float(sim))
+    if data == 'TADF':
+        tadf_count +=1  
+    if data == 'Chromo':
+        chromo_count +=1
+    idx+=1
+    if idx ==100:
+        print(tadf_count, chromo_count, idx)
+    if idx ==500:
+        print(tadf_count, chromo_count, idx)
+    if idx ==1000:
+        print(tadf_count, chromo_count, idx)
+    print(smiles, nearest_smiles, likeness, sim, data)
 
-    #sns.kdeplot(upper_sim_list, shade=True)
-    sns.histplot(upper_sim_list, bins=7, color = 'deepskyblue')
-    plt.tick_params(length=tick_length, width=tick_width, labelsize=tick_labelsize, labelcolor='k', color='k')
-    plt.xlabel(rf'MTS', fontsize=label_fontsize, color='k')
-    plt.ylabel('Count', fontsize=label_fontsize, color='k')
-    plt.xticks([0.2,0.4,0.6,0.8,1.0])
+#cutoff_sim = sort_sim_list[int(len(sort_sim_list)*(1-ratio))]
+cutoff_sim = 0.6
 
-    plt.show()
+tmp = likeness_list[:]
+tmp.sort()
+#cutoff_likeness = tmp[int(len(tmp)*(1-ratio))]
+cutoff_likeness = 88.60424263    
+print('likeness cutoff :', cutoff_likeness)
+print('sim cutoff :', cutoff_sim)
 
+upper_likeness_list, lower_likeness_list = [], []
+count = 0
+for likeness, sim in zip(likeness_list, sort_sim_list):
+    #if sim < cutoff_sim:
+    if likeness > cutoff_likeness:
+    #if sim > 0.5:
+        upper_sim_list.append(sim)
+        upper_likeness_list.append(likeness)
+        if sim < cutoff_sim:
+            count +=1
+    else:
+        lower_sim_list.append(sim)
+        lower_likeness_list.append(likeness)
+            
+print('cutoff likeness upper  : ',len(upper_sim_list), count)
+print('min : ',min(upper_sim_list))
+#with open('suppoting_sim_data_chromophore.txt','w') as f:
+#    for ind, smiles, sim, likeness, nearest_smiles in zip(ind_list, sort_smiles_list, sort_sim_list, likeness_list, sort_nearest_smiles_list):
+#        f.write(f'{ind} {smiles} {likeness} {sim} {nearest_smiles}\n')
+#        if likeness > cutoff_likeness:
+#            print(ind, smiles, sim, likeness, nearest_smiles)    
 
+colors = ['violet','silver','springgreen','gold','deepskyblue']
+x_start = 60
+
+#sns.kdeplot(upper_sim_list, shade=True)
+#sns.histplot(upper_sim_list, bins=10, color = 'b', label ='combined dataset (upper cutoff)')
+sns.histplot(tadf_sim_list, bins=10, color = 'b', label ='candidates in top 100')
+sns.histplot(new_sim_list, bins=10, color = 'r', label ='Combined dataset')
+plt.tick_params(length=tick_length, width=tick_width, labelsize=tick_labelsize, labelcolor='k', color='k')
+plt.xlabel(rf'MTS', fontsize=label_fontsize, color='k')
+plt.ylabel('Count', fontsize=label_fontsize, color='k')
+plt.xticks([0.2,0.4,0.6,0.8,1.0])
+plt.legend()
+plt.show()

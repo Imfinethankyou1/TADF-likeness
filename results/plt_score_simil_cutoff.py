@@ -104,6 +104,7 @@ for fn in fns:
         sort_smiles_list.append(smiles)
         sort_nearest_smiles_list.append(nearest_smiles)
         ind_list.append(ind)
+        print(sim, smiles, likeness)
     #cutoff_sim = sort_sim_list[int(len(sort_sim_list)*(1-ratio))]
     
     cutoff_sim = 0.6
@@ -121,19 +122,31 @@ for fn in fns:
     upper_likeness_list, lower_likeness_list = [], []
     upper_sim_list, lower_sim_list = [] , []
     count = 0
+
+    print('min sim : ', min(sort_sim_list))
+
+    total_sim_bar_list = [0 for i in range(9)]
+    upper_sim_bar_list = [0 for i in range(9)]
+
+    total_count = 0
     for likeness, sim in zip(likeness_list, sort_sim_list):
+        ind = int(sim/0.1)-2
+        total_sim_bar_list[ind]+=1
+        print(sim)
         if likeness > cutoff_likeness:
-        #if sim < cutoff_sim:
-        #if sim > 0.5:
             upper_sim_list.append(sim)
             upper_likeness_list.append(likeness)
+            upper_sim_bar_list[ind]+=1
             if sim < cutoff_sim:
                 count +=1
         else:
             lower_sim_list.append(sim)
             lower_likeness_list.append(likeness)
+        if sim < cutoff_sim:
+           total_count +=1
                 
     print('cutoff 0.6 upper  : ',len(upper_sim_list), count)
+    print('cutoff 0.6 upper (total)  : ',len(sort_sim_list), total_count)
     print('min : ',min(upper_sim_list))
     with open('suppoting_sim_data.txt','w') as f:
         for ind, smiles, sim, likeness, nearest_smiles in zip(ind_list, sort_smiles_list, sort_sim_list, likeness_list, sort_nearest_smiles_list):
@@ -146,12 +159,18 @@ for fn in fns:
     x_start = 60
 
     #sns.kdeplot(upper_sim_list, shade=True)
-    sns.histplot(upper_sim_list, bins=7, color = 'deepskyblue')
-    plt.tick_params(length=tick_length, width=tick_width, labelsize=tick_labelsize, labelcolor='k', color='k')
+    #sns.histplot(upper_sim_list, bins=7, color = 'deepskyblue')
+    x_list = [round(0.2+i*0.1,1) for i in range(9)]
+    print(total_sim_bar_list)
+    plt.tick_params(length=tick_length, width=0.1, labelsize=tick_labelsize, labelcolor='k', color='k')
+    plt.bar(x_list, total_sim_bar_list, width=0.1 , label='TADF (test)')
+    plt.bar(x_list, upper_sim_bar_list, width=0.1 , label='TADF (upper cutoff)')
+    
     plt.xlabel(rf'MTS', fontsize=label_fontsize, color='k')
     plt.ylabel('Count', fontsize=label_fontsize, color='k')
-    plt.xticks([0.2,0.4,0.6,0.8,1.0])
-
+    plt.ylim([0,35])
+    #plt.xticks([0.2,0.4,0.6,0.8,1.0])
+    plt.legend()
     plt.show()
 
 

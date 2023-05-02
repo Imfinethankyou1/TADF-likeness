@@ -3,9 +3,11 @@ from rdkit import Chem
 
 
 with open('total_train_data.txt') as f:
+#with open('TADF-2022.txt') as f:
     lines = f.readlines()
 
 with open('vis_chromophore_pretrain.txt') as f:
+#with open('unseen-TADF.txt') as f:
     lines += f.readlines()
 
 smiles_list = []
