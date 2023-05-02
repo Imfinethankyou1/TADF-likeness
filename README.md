@@ -47,3 +47,4 @@
 ## How to see the results in our paper
 -----------------
 There are DFT calculation results, TADF-likenss scores of molecules in various database, and codes for showing results in results directory
+You can download real world scenario data at https://www.dropbox.com/sh/9zoq6kc42vutlwc/AAANNOvIAGwMLoZKdbjJqVCha?dl=0
