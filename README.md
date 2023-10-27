@@ -26,21 +26,19 @@
 ```
 2. Random sampling from Pubchem
 -> this routine needs to a lot of time-cost
--> Thus, we prepared this data (data/random_2_log5.txt)
+-> Thus, we prepared this data (data/Pub_remove_sim.txt)
 
 3. Generate molecular descriptors using prepared database
 ```yaml
     cd data
-    python make_input.py
     python make_database.py #(25m 53.0)
 ```
 
      
-## How to execute 
+## TADF-likeness scoring
 -----------------
 ```yaml
-   source train_vis_chromophore.sh
-   source train_TADF.sh
+   source train_TADF_clustering_split_1.sh
 ```
 
 
@@ -48,3 +46,4 @@
 -----------------
 There are DFT calculation results, TADF-likenss scores of molecules in various database, and codes for showing results in results directory
 You can download real world scenario data at https://www.dropbox.com/sh/9zoq6kc42vutlwc/AAANNOvIAGwMLoZKdbjJqVCha?dl=0
+
