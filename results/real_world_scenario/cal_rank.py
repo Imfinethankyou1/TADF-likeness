@@ -2,8 +2,8 @@ import glob
 import pickle
 
 
-smiles2likeness = {}
-smiles2rank = {}
+#smiles2likeness = {}
+#smiles2rank = {}
 
 with open('smiles2likeness.pickle', 'rb') as f:
     smiles2likeness = pickle.load(f) 

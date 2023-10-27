@@ -53,10 +53,10 @@ def read_data(filename):
     pub_ps =  [ps for ps in [pub_homo,pub_lumo, pub_s1, pub_st] ]
     return pub_ps
 
-tadf_ps = read_data('./total_train_QC_data.txt')
+tadf_ps = read_data('../total_train_QC_data.txt')
 
 
-fns = ['low_QC_data.txt','medium_QC_data.txt','high_QC_data.txt']
+fns = ['medium_QC_data.txt','high_QC_data.txt']
 
 for idx, fn in enumerate(fns):
     with open(fn) as f:

@@ -32,7 +32,14 @@ class AETrainer():
                     labels = data['target']
                     idx = data['key']
                     if isinstance(idx,list):
-                        idx = [int(i)  for i in idx]
+                        new_idx = []
+                        for i in idx:
+                            try:
+                                i=int(i)
+                            except:
+                                i=0
+                            new_idx.append(i)
+                        idx = new_idx                                 
                         idx = torch.Tensor(idx)
                         idx = idx.to(self.device)
                     inputs = inputs.to(self.device)
