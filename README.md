@@ -14,24 +14,12 @@
     pip install sklearn
 
 
-## How to data processing
+## Data preprocessing 
 -----------------------------
-
-1. Make chromophore database
-```yaml 
-    cd data_preprocessing
-    python extract_fluorescence.py
-    python extract_pretrain.py # for pretraining
-    python utils.py # Making training dataset
-```
-2. Random sampling from Pubchem
--> this routine needs to a lot of time-cost
--> Thus, we prepared this data (data/Pub_remove_sim.txt)
-
-3. Generate molecular descriptors using prepared database
+Generate molecular descriptors using prepared database
 ```yaml
     cd data
-    python make_database.py #(25m 53.0)
+    python 2_make_database.py #(25m 53.0)
 ```
 
      
@@ -40,6 +28,7 @@
 ```yaml
    source train_TADF_clustering_split_1.sh
 ```
+
 
 
 ## How to see the results in our paper
